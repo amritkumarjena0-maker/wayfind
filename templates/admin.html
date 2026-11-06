@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block content %}
+<h1>Enquiries</h1>
+<table><tr><th>When</th><th>Course</th><th>Name</th><th>Email</th><th>Message</th></tr>
+{% for r in rows %}<tr><td>{{ r.created_at }}</td><td>{{ r.title }}</td><td>{{ r.name }}</td><td>{{ r.email }}</td><td>{{ r.message }}</td></tr>
+{% else %}<tr><td colspan="5" class="muted">No enquiries yet.</td></tr>{% endfor %}</table>
+{% endblock %}

@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block content %}
+<h1>Your shortlist</h1>
+<div class="grid">{% set saved = courses|map(attribute='id')|list %}{% for c in courses %}{% include "_card.html" %}{% else %}<p class="muted">Nothing saved yet.</p>{% endfor %}</div>
+{% endblock %}

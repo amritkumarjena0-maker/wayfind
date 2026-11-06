@@ -1,0 +1,7 @@
+<article class="card">
+  <div><span class="tag">{{ c.category }}</span> <span class="tag lvl">{{ c.level }}</span></div>
+  <h3><a href="{{ url_for('course', cid=c.id) }}">{{ c.title }}</a></h3>
+  <p>{{ c.description }}</p>
+  <div class="row"><span>{{ c.weeks }} weeks · {{ '$%d' % c.fee if c.fee else 'Free' }}</span>
+  <form method="post" action="{{ url_for('save', cid=c.id) }}"><button class="btn {{ 'on' if c.id in saved }}">{{ 'Saved ✓' if c.id in saved else 'Save' }}</button></form></div>
+</article>

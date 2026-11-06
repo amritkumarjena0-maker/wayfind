@@ -1,0 +1,20 @@
+:root{--bg:#f6f3ee;--s:#fff;--t:#1d2b2a;--m:#5d6b69;--a:#0f766e;--o:#e07a3f;--b:#e2ddd3;color-scheme:light dark}
+@media(prefers-color-scheme:dark){:root{--bg:#101a19;--s:#172423;--t:#e8efee;--m:#9bb0ad;--a:#2dd4bf;--o:#f59e63;--b:#26403d}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font:16px/1.5 system-ui,sans-serif}
+nav{display:flex;justify-content:space-between;padding:14px 20px;background:var(--a);color:#fff}
+nav a{color:#fff;text-decoration:none;margin-left:14px}.brand{font-weight:700;font-size:20px;margin:0}
+main{max-width:1000px;margin:0 auto;padding:20px}a{color:var(--a)}
+.controls{display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:10px}
+@media(max-width:720px){.controls{grid-template-columns:1fr 1fr}.controls input{grid-column:1/-1}}
+input,select,textarea{padding:10px;border:1px solid var(--b);border-radius:8px;background:var(--s);color:var(--t);font:inherit;width:100%}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.card{background:var(--s);border:1px solid var(--b);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.card h3{margin:0}.card p{margin:0;color:var(--m);font-size:14px}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;font-size:14px}
+.tag{font-size:12px;padding:2px 9px;border-radius:99px;background:color-mix(in srgb,var(--a) 14%,transparent);color:var(--a)}
+.tag.lvl{background:color-mix(in srgb,var(--o) 16%,transparent);color:var(--o)}
+.btn{border:1px solid var(--a);background:transparent;color:var(--a);padding:8px 14px;border-radius:8px;cursor:pointer;font:inherit;font-size:14px}
+.btn.on{background:var(--a);color:var(--bg)}.muted{color:var(--m)}
+.stack{display:grid;gap:10px;max-width:460px}
+.flash{padding:10px 14px;border-radius:8px;margin-bottom:12px;background:color-mix(in srgb,var(--a) 15%,transparent)}.flash.error{background:color-mix(in srgb,#dc2626 18%,transparent)}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:8px;border-bottom:1px solid var(--b)}

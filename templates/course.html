@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block title %}{{ c.title }}{% endblock %}{% block content %}
+<a href="{{ url_for('index') }}">← All courses</a>
+<h1>{{ c.title }}</h1>
+<p><span class="tag">{{ c.category }}</span> <span class="tag lvl">{{ c.level }}</span> · {{ c.weeks }} weeks · {{ '$%d' % c.fee if c.fee else 'Free' }}</p>
+<p>{{ c.description }}</p>
+<form method="post" action="{{ url_for('save', cid=c.id) }}"><button class="btn {{ 'on' if saved }}">{{ 'Saved ✓' if saved else 'Save to shortlist' }}</button></form>
+<h2>Enquire about this course</h2>
+<form class="stack" method="post" action="{{ url_for('enquire', cid=c.id) }}">
+  <input name="name" placeholder="Your name" required>
+  <input name="email" type="email" placeholder="Email" required>
+  <textarea name="message" rows="4" placeholder="Message (optional)"></textarea>
+  <button class="btn on">Send enquiry</button>
+</form>
+{% endblock %}

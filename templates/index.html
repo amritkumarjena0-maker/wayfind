@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block content %}
+<h1>Find your travel &amp; tourism course</h1>
+<form class="controls" method="get">
+  <input name="q" value="{{ q }}" placeholder="Search courses…">
+  <select name="category"><option value="">All categories</option>{% for x in cats %}<option {{ 'selected' if x==cat }}>{{ x }}</option>{% endfor %}</select>
+  <select name="level"><option value="">All levels</option>{% for x in ['Beginner','Intermediate','Advanced'] %}<option {{ 'selected' if x==lvl }}>{{ x }}</option>{% endfor %}</select>
+  <select name="sort">{% for k,l in [('title','A–Z'),('weeks','Shortest'),('fee','Lowest fee')] %}<option value="{{k}}" {{ 'selected' if k==sort }}>{{ l }}</option>{% endfor %}</select>
+  <button class="btn on">Apply</button>
+</form>
+<p class="muted">{{ courses|length }} course(s) found</p>
+<div class="grid">{% for c in courses %}{% include "_card.html" %}{% else %}<p class="muted">No courses match.</p>{% endfor %}</div>
+{% endblock %}
